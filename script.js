@@ -5,6 +5,8 @@ window.addEventListener('DOMContentLoaded', function () {
 function loadImage() {
     var imageContainer = document.getElementById('image-container');
     var image = document.getElementById('image');
+    image.classList.remove('loaded');
+
     // Make a request to the capybara API
     fetch('https://api.capy.lol/v1/capybara?json=true')
         .then(function (response) {
@@ -21,8 +23,13 @@ function loadImage() {
             imageContainer.appendChild(image);
 
             image.addEventListener('load', function () {
-                var maxWidth = window.innerWidth * 0.95; // 80% of viewport width
-                var maxHeight = window.innerHeight * 0.8; // 80% of viewport height
+
+                // animation
+                image.classList.add('loaded');
+
+                // Resize the image to fit the viewport
+                var maxWidth = window.innerWidth * 0.9; // 80% of viewport width
+                var maxHeight = window.innerHeight * 0.7; // 80% of viewport height
 
                 var imgWidth = image.naturalWidth;
                 var imgHeight = image.naturalHeight;
@@ -33,8 +40,6 @@ function loadImage() {
 
                 image.width = imgWidth;
                 image.height = imgHeight;
-                // image.style.width = Math.min(maxWidth, imgWidth) + 'px';
-                // image.style.height = Math.min(maxHeight, imgHeight) + 'px';
             });
         })
         .catch(function (error) {

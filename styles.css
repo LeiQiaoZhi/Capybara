@@ -24,12 +24,13 @@ body {
     padding: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     background-color: white;
-    /* max-width: 80vw; */
-    /* max-height: 70vh; */
-    /* width: auto; */
-    /* height: auto; */
-    /* object-fit: contain; */
     transition: box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#image.loaded {
+    opacity: 1;
 }
 
 #image:hover {
@@ -43,7 +44,7 @@ body {
     padding: 10px 20px;
     border: none;
     border-radius: 15px;
-    font-size: 1rem;
+    font-size: 2vw;
     cursor: pointer;
     position: relative;
     overflow: hidden;
