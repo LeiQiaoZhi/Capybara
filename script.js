@@ -1,7 +1,10 @@
 window.addEventListener('DOMContentLoaded', function () {
-    // Get the image container element
-    var imageContainer = document.getElementById('image-container');
+    loadImage();
+});
 
+function loadImage() {
+    var imageContainer = document.getElementById('image-container');
+    var image = document.getElementById('image');
     // Make a request to the capybara API
     fetch('https://api.capy.lol/v1/capybara?json=true')
         .then(function (response) {
@@ -11,7 +14,6 @@ window.addEventListener('DOMContentLoaded', function () {
         .then(function (data) {
             console.log('Data:', data);
             // Create an image element
-            var image = document.createElement('img');
             image.src = data.data.url;
             image.alt = 'Capybara';
 
@@ -20,22 +22,22 @@ window.addEventListener('DOMContentLoaded', function () {
 
             image.addEventListener('load', function () {
                 var maxWidth = window.innerWidth * 0.8; // 80% of viewport width
-                var maxHeight = window.innerHeight * 0.8; // 80% of viewport height
+                var maxHeight = window.innerHeight * 0.7; // 80% of viewport height
 
-                var imgWidth = image.width;
-                var imgHeight = image.height;
+                var imgWidth = image.naturalWidth;
+                var imgHeight = image.naturalHeight;
 
-                if (imgWidth < maxWidth && imgHeight < maxHeight) {
-                    var scaleFactor = Math.min(maxWidth / imgWidth, maxHeight / imgHeight);
-                    imgWidth *= scaleFactor;
-                    imgHeight *= scaleFactor;
-                }
+                var scaleFactor = Math.min(maxWidth / imgWidth, maxHeight / imgHeight);
+                imgWidth *= scaleFactor;
+                imgHeight *= scaleFactor;
 
-                image.style.width = imgWidth + 'px';
-                image.style.height = imgHeight + 'px';
+                image.width = imgWidth;
+                image.height = imgHeight;
+                // image.style.width = Math.min(maxWidth, imgWidth) + 'px';
+                // image.style.height = Math.min(maxHeight, imgHeight) + 'px';
             });
         })
         .catch(function (error) {
             console.log('Error:', error);
         });
-});
+}
