@@ -21,8 +21,8 @@ function loadImage() {
             imageContainer.appendChild(image);
 
             image.addEventListener('load', function () {
-                var maxWidth = window.innerWidth * 0.8; // 80% of viewport width
-                var maxHeight = window.innerHeight * 0.7; // 80% of viewport height
+                var maxWidth = window.innerWidth * 0.95; // 80% of viewport width
+                var maxHeight = window.innerHeight * 0.8; // 80% of viewport height
 
                 var imgWidth = image.naturalWidth;
                 var imgHeight = image.naturalHeight;

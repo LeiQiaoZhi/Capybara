@@ -1,3 +1,7 @@
+:root {
+    --main-color: rgb(251, 230, 234);
+}
+
 html,
 body {
     height: 100%;
@@ -6,7 +10,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(251, 230, 234);
+    background-color: var(--main-color);
 }
 
 #image-container {
@@ -25,11 +29,11 @@ body {
     /* width: auto; */
     /* height: auto; */
     /* object-fit: contain; */
-    transition: padding 0.4s;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 #image:hover {
-    padding: 25px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.331);
 }
 
 #button {
@@ -39,7 +43,7 @@ body {
     padding: 10px 20px;
     border: none;
     border-radius: 15px;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     position: relative;
     overflow: hidden;
