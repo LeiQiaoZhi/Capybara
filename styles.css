@@ -23,9 +23,9 @@ h1 {
 }
 
 #image-container img {
-    max-width: 100%;
+    max-width: 80vw;
     max-height: 80vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    /* width: auto; */
+    /* height: auto; */
+    /* object-fit: contain; */
 }
