@@ -11,6 +11,8 @@ body {
     align-items: center;
     justify-content: center;
     background-color: var(--main-color);
+    font-family: 'Indie Flower', cursive;
+
 }
 
 #image-container {
@@ -24,9 +26,8 @@ body {
     padding: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     background-color: white;
-    transition: box-shadow 0.3s ease-in-out;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 #image.loaded {
@@ -34,7 +35,7 @@ body {
 }
 
 #image:hover {
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.331);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
 }
 
 #button {
@@ -44,11 +45,12 @@ body {
     padding: 10px 20px;
     border: none;
     border-radius: 15px;
-    font-size: 2vw;
+    font-size: max(2vw, 4vh);
     cursor: pointer;
     position: relative;
     overflow: hidden;
     animation: pulse 2s infinite;
+    font-family: 'Indie Flower', cursive;
 }
 
 
@@ -59,7 +61,7 @@ body {
     }
 
     50% {
-        transform: scale(1.05);
+        transform: scale(1.02);
         box-shadow: 0 0 10px rgb(255, 186, 231);
     }
 
