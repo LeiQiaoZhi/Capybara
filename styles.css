@@ -1,5 +1,6 @@
 :root {
     --main-color: rgb(251, 230, 234);
+    --font-size: max(2vw, 4vh);
 }
 
 html,
@@ -11,8 +12,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: var(--main-color);
-    font-family: 'Indie Flower', cursive;
-
+    font-family: 'Montserrat', sans-serif;
 }
 
 #image-container {
@@ -42,15 +42,15 @@ body {
     margin-top: 4vh;
     background-color: rgb(216, 81, 106);
     color: #fff;
-    padding: 10px 20px;
+    padding: calc(0.5 * var(--font-size)) calc(1 * var(--font-size));
     border: none;
-    border-radius: 15px;
-    font-size: max(2vw, 4vh);
+    border-radius: 1000px;
+    font-size: var(--font-size);
     cursor: pointer;
     position: relative;
     overflow: hidden;
     animation: pulse 2s infinite;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
